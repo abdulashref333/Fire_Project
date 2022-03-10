@@ -9,16 +9,18 @@ jobs:
     steps:
       - node/install
       - checkout
-      - aws-cli/setup
-      - eb/setup
       - run:
-          name: Front Install
+          name: Install
           command: |
-            npm run front-install
+            npm run install
       - run:
           name: Back Install
           command: |
             npm run back-install
+      - run:
+          name: Front Install
+          command: |
+            npm run front-install
       - run:
           name: Back Build
           command: |
